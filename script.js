@@ -113,6 +113,7 @@
         setHole();
 
         character.style.top = 250 + "px";
+        hole.style.height = 200 + 'px';
         block.style.animation = "block 2s infinite linear";   
         hole.style.animation = "hole 2s infinite linear";
     }
