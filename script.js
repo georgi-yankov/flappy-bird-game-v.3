@@ -75,6 +75,7 @@
         const characterHeight = parseInt(window.getComputedStyle(character).getPropertyValue("height"));
         const holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
         const holeLeft = parseInt(window.getComputedStyle(hole).getPropertyValue("left"));
+        const holeWidth = parseInt(window.getComputedStyle(hole).getPropertyValue("width"));
         const holeHeight = parseInt(window.getComputedStyle(hole).getPropertyValue("height"));
 
         // Check for top strike
@@ -89,8 +90,8 @@
 
         // Check for block strike
         if (
-            holeLeft <= characterLeft + characterWidth
-            && (characterTop <= holeTop || characterTop >= holeTop + holeHeight)
+            (holeLeft <= characterLeft + characterWidth && holeLeft + holeWidth >= characterLeft) &&
+            (characterTop <= holeTop || characterTop >= holeTop + holeHeight)
             ) {
             return true;
         }
