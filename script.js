@@ -91,7 +91,7 @@
         // Check for block strike
         if (
             (holeLeft <= characterLeft + characterWidth && holeLeft + holeWidth >= characterLeft) &&
-            (characterTop <= holeTop || characterTop >= holeTop + holeHeight)
+            (characterTop + 2 < holeTop || characterTop - 2 + characterHeight > holeTop + holeHeight)
             ) {
             return true;
         }
